@@ -113,9 +113,8 @@ void cpu_destory( cpu_t * ptr ) {
 
 int main(int argc, char ** argv) {
     int program[16] = {6,3,15,15,7,3,7,9,3,8,4,7,5,8,0,0};
-    cpu_t * micro = cpu_init(program);
-    micro->output_func = &count_it_callback;
-    cpu_run( micro );
-    printf("\nTotal output: %d\n", outputCount);
+    cpu_t * c4004 = cpu_init(program);
+    c4004->output_func = &count_it_callback;
+    cpu_run(c4004);
     return 0;
 }
