@@ -15,6 +15,10 @@ typedef struct {
     int memory[PROGRAM_SIZE];
 } cpu_t;
 
+void cput_of(int c) {
+    putchar(c);
+}
+
 cpu_t * cpu_init( int program[PROGRAM_SIZE] ) {
     int i;
     cpu_t * result = (cpu_t *)calloc(sizeof(cpu_t),1);
@@ -114,7 +118,7 @@ void cpu_destory( cpu_t * ptr ) {
 int main(int argc, char ** argv) {
     int program[16] = {6,3,15,15,7,3,7,9,3,8,4,7,5,8,0,0};
     cpu_t * c4004 = cpu_init(program);
-    c4004->output_func = &count_it_callback;
+    c4004->output_func = &cpu_of;
     cpu_run(c4004);
     return 0;
 }
