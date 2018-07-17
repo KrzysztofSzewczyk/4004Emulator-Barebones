@@ -15,7 +15,7 @@ typedef struct {
     int memory[PROGRAM_SIZE];
 } cpu_t;
 
-void cput_of(int c) {
+void cpu_of(int c) {
     putchar(c);
 }
 
